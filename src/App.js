@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import HomeScreen from './screens/homescreen/homescreen';
+import Login from './screens/login/loginscreen';
+import SignUpScreen from './screens/signup/signupscreen';
+import SignUpScreen2 from './screens/signup2/signupscreen2';
+//import ResourceScreen from './screens/resourcescreen';
+//import AlumniScreen from './screens/alumniscreen';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUpScreen />} />
+        <Route path="/signup2" element={<SignUpScreen2 />} />
+        {/* Add more routes for other screens */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
